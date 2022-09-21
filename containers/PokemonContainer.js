@@ -3,9 +3,9 @@ import React from "react";
 import { Pokemon } from "../components/Pokemon";
 import { GET_POKEMONS } from "../graphql/get-pokemon";
 
-export function PokemonsContainer() {
+export function PokemonsContainer(page) {
   const { data: { getFuzzyPokemon = [] } = {} } = useQuery(GET_POKEMONS, {
-    variables: { pokemon: "charmander", page: 0 },
+    variables: { pokemon: "charmander", page: page.page },
   });
 
   return (
