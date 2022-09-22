@@ -1,9 +1,11 @@
 // styles/global.scss
-
-body {
-  margin-top: 5vh;
+main {
+  height: 90vh;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column;
+  margin: 3vh 3vw;
 }
-
 .flex-container {
   display: flex;
   flex-wrap: wrap;
@@ -13,6 +15,7 @@ body {
     align-self: end;
     text-align: center;
     flex: 0 0 13%;
+    cursor: pointer;
   }
 }
 .pagination {
@@ -22,5 +25,119 @@ body {
   .pagination_item {
     text-align: end;
     margin: 0 5px;
+  }
+}
+.pokemon_detail {
+  .pokemon_info {
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    .pokemon_sprite {
+      .image {
+        transform: scale(3);
+      }
+    }
+    .pokemon_desc {
+      width: 30%;
+      .pokemon_name {
+        font-size: x-large;
+        font-weight: bold;
+        margin: 0%;
+      }
+      .type {
+        display: flex;
+        p {
+          margin-right: 15px;
+          color: white;
+          padding: 3px;
+        }
+        .Fairy {
+          background-color: #ee99ee;
+        }
+        .Ice {
+          background-color: #66ccff;
+        }
+        .Dragon {
+          background-color: #7766ee;
+        }
+        .Normal {
+          background-color: #aaaa99;
+        }
+        .Rock {
+          background-color: #bbaa66;
+        }
+        .Fire {
+          background-color: #ff4422;
+        }
+        .Flying {
+          background-color: #8899ff;
+        }
+        .Bug {
+          background-color: #aabb22;
+        }
+        .Electric {
+          background-color: #ffcc33;
+        }
+        .Fighting {
+          background-color: #bb5544;
+        }
+        .Psychic {
+          background-color: #ff5599;
+        }
+        .Water {
+          background-color: #3399ff;
+        }
+        .Steel {
+          background-color: #aaaabb;
+        }
+        .Ghost {
+          background-color: #6666bb;
+        }
+        .Dark {
+          background-color: #775544;
+        }
+        .Poison {
+          background-color: #aa5599;
+        }
+        .Grass {
+          background-color: #77cc55;
+        }
+        .Ground {
+          background-color: #ddbb55;
+        }
+      }
+      .desc {
+        p {
+          margin: 0;
+        }
+      }
+      .size {
+        display: flex;
+        p {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}
+.loading {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pokemon_status {
+  p {
+    margin: 0;
+  }
+  .status_container {
+    background-color: rgba(65, 206, 199, 0.205);
+    display: flex;
+    color: white;
+    .status {
+      background-color: rgba(12, 180, 172, 0.685);
+      padding: 2px;
+    }
   }
 }

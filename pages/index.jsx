@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { PokemonsContainer } from "../containers/PokemonContainer";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import Head from "next/head";
 
 export default function Home() {
   const [page, setPage] = useState(0);
@@ -26,6 +27,11 @@ export default function Home() {
 
   return (
     <ApolloProvider client={myclient}>
+      <Head>
+        <title>Poké Book</title>
+        <meta name="pokédex app" content="pokédex application" />
+        <link rel="icon" href="/favicon.png" />
+      </Head>
       <main>
         <PokemonsContainer page={page} />
         <div>
