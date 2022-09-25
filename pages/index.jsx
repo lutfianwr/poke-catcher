@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { PokemonsContainer } from "../containers/PokemonContainer";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import Head from "next/head";
+import Header from "../components/Header";
+import Layout from "../components/Layout";
 
 export default function Home() {
   const [page, setPage] = useState(0);
@@ -28,50 +30,52 @@ export default function Home() {
   return (
     <ApolloProvider client={myclient}>
       <Head>
-        <title>Poké Book</title>
+        <title>Poké Room</title>
         <meta name="pokédex app" content="pokédex application" />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <main>
-        <PokemonsContainer page={page} />
-        <div>
-          <div className="pagination">
-            <a className="pagination_item">
-              <button onClick={() => handlePrevPage()}>prev page</button>
-            </a>
-            <p className="pagination_item">{pageNumber}</p>
-            <a className="pagination_item">
-              <button onClick={() => handleNextPage()}>next page</button>
-            </a>
+      <Layout>
+        <main>
+          <PokemonsContainer page={page} />
+          <div>
+            <div className="pagination">
+              <a className="pagination_item">
+                <button onClick={() => handlePrevPage()}>prev page</button>
+              </a>
+              <p className="pagination_item">{pageNumber}</p>
+              <a className="pagination_item">
+                <button onClick={() => handleNextPage()}>next page</button>
+              </a>
+            </div>
+            <div className="pagination">
+              <button
+                onClick={() => (setPageNumber(1), setPage(0))}
+                className="pagination_item"
+              >
+                1
+              </button>
+              <button
+                onClick={() => (setPageNumber(20), setPage(399))}
+                className="pagination_item"
+              >
+                20
+              </button>
+              <button
+                onClick={() => (setPageNumber(40), setPage(819))}
+                className="pagination_item"
+              >
+                40
+              </button>
+              <button
+                onClick={() => (setPageNumber(60), setPage(1239))}
+                className="pagination_item"
+              >
+                60
+              </button>
+            </div>
           </div>
-          <div className="pagination">
-            <button
-              onClick={() => (setPageNumber(1), setPage(0))}
-              className="pagination_item"
-            >
-              1
-            </button>
-            <button
-              onClick={() => (setPageNumber(20), setPage(399))}
-              className="pagination_item"
-            >
-              20
-            </button>
-            <button
-              onClick={() => (setPageNumber(40), setPage(819))}
-              className="pagination_item"
-            >
-              40
-            </button>
-            <button
-              onClick={() => (setPageNumber(60), setPage(1239))}
-              className="pagination_item"
-            >
-              60
-            </button>
-          </div>
-        </div>
-      </main>
+        </main>
+      </Layout>
     </ApolloProvider>
   );
 }
