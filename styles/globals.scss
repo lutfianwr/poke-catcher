@@ -36,10 +36,33 @@ main {
   justify-content: space-between;
 
   .pokemon {
-    align-self: end;
+    // align-self: end;
     text-align: center;
     flex: 0 0 13%;
     cursor: pointer;
+    .pokemon_sprite {
+      img {
+        width: 100px;
+        height: auto;
+      }
+    }
+    .pokemon_name {
+      p {
+        margin: 0;
+      }
+    }
+    .pokemon_type {
+      p {
+        margin-top: 5px;
+      }
+      .dual_type {
+        display: flex;
+        justify-content: center;
+        p {
+          margin: 5px 10px 5px 10px;
+        }
+      }
+    }
   }
 }
 .pagination {

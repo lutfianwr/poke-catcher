@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { PokemonsContainer } from "../containers/PokemonContainer";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import Head from "next/head";
-import Header from "../components/Header";
 import Layout from "../components/Layout";
 
 export default function Home() {
@@ -10,7 +9,7 @@ export default function Home() {
   const [pageNumber, setPageNumber] = useState(1);
 
   const myclient = new ApolloClient({
-    uri: "https://graphqlpokemon.favware.tech/",
+    uri: "https://beta.pokeapi.co/graphql/v1beta",
     cache: new InMemoryCache(),
   });
 

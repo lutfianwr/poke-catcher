@@ -1,9 +1,6 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import Header from "../components/Header";
 import Layout from "../components/Layout";
-// require { Query } from "@favware/graphql-pokemon";
 
 const PokemonName = () => {
   const [data, setData] = useState([]);
@@ -52,7 +49,7 @@ const PokemonName = () => {
         <div className="pokemon_detail">
           <div className="pokemon_info">
             <div className="pokemon_sprite">
-              <img className="image" src={data.sprite}></img>
+              <img className="image" alt="" src={data.sprite}></img>
             </div>
             <div className="pokemon_desc">
               <p className="pokemon_name">
