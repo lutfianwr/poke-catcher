@@ -6,6 +6,7 @@ import Layout from "../components/Layout";
 
 export default function Home() {
   const [page, setPage] = useState(0);
+  const [limit, setLimit] = useState(151);
   const [pageNumber, setPageNumber] = useState(1);
 
   const myclient = new ApolloClient({
@@ -35,41 +36,53 @@ export default function Home() {
       </Head>
       <Layout>
         <main>
-          <PokemonsContainer page={page} />
+          <PokemonsContainer page={page} limit={limit} />
           <div>
             <div className="pagination">
-              <a className="pagination_item">
-                <button onClick={() => handlePrevPage()}>prev page</button>
-              </a>
-              <p className="pagination_item">{pageNumber}</p>
-              <a className="pagination_item">
-                <button onClick={() => handleNextPage()}>next page</button>
-              </a>
+              <p className="pagination_item">generation {pageNumber}</p>
             </div>
             <div className="pagination">
               <button
-                onClick={() => (setPageNumber(1), setPage(0))}
+                onClick={() => (setPageNumber(1), setPage(0), setLimit(151))}
                 className="pagination_item"
               >
                 1
               </button>
               <button
-                onClick={() => (setPageNumber(20), setPage(399))}
+                onClick={() => (setPageNumber(2), setPage(151), setLimit(100))}
                 className="pagination_item"
               >
-                20
+                2
               </button>
               <button
-                onClick={() => (setPageNumber(40), setPage(819))}
+                onClick={() => (setPageNumber(3), setPage(251), setLimit(134))}
                 className="pagination_item"
               >
-                40
+                3
               </button>
               <button
-                onClick={() => (setPageNumber(60), setPage(1239))}
+                onClick={() => (setPageNumber(4), setPage(386), setLimit(107))}
                 className="pagination_item"
               >
-                60
+                4
+              </button>
+              <button
+                onClick={() => (setPageNumber(5), setPage(494), setLimit(155))}
+                className="pagination_item"
+              >
+                5
+              </button>
+              <button
+                onClick={() => (setPageNumber(6), setPage(650), setLimit(159))}
+                className="pagination_item"
+              >
+                6
+              </button>
+              <button
+                onClick={() => (setPageNumber(7), setPage(810), setLimit(88))}
+                className="pagination_item"
+              >
+                7
               </button>
             </div>
           </div>

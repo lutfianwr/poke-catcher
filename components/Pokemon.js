@@ -1,12 +1,19 @@
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 export function Pokemon(pokemon) {
   return (
     <Link href={pokemon.name}>
       <div className="pokemon">
         <div className="pokemon_sprite">
-          <img src={pokemon.sprite} alt="" />
+          <Image
+            alt=""
+            layout="fixed"
+            width={130}
+            height={130}
+            src={pokemon.sprite}
+          ></Image>
         </div>
         <div className="pokemon_name">
           <p>#{pokemon.id}</p>

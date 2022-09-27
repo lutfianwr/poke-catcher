@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: [`play.pokemonshowdown.com`],
+    domains: [`play.pokemonshowdown.com`, `raw.githubusercontent.com`],
   },
 };
 

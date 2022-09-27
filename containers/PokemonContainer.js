@@ -5,12 +5,11 @@ import { GET_POKEMONS } from "../graphql/get-pokemon";
 
 export function PokemonsContainer(page) {
   const { data: { pokemon_v2_pokemon = [] } = {} } = useQuery(GET_POKEMONS, {
-    variables: { offset: page.page },
+    variables: { offset: page.page, limit: page.limit },
   });
 
   return (
     <div className="pokemons flex-container">
-      {console.log(pokemon_v2_pokemon)}
       {pokemon_v2_pokemon.map((pokemon) => (
         <Pokemon
           key={pokemon.id}
