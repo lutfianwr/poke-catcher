@@ -76,17 +76,20 @@ main {
 }
 .pokemon_detail {
   .pokemon_info {
-    height: 100vh;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
+    padding: 10vh 15vw;
     .pokemon_sprite {
+      image-rendering: pixelated;
+      align-self: end;
       .image {
-        transform: scale(3);
+        height: 400px;
       }
     }
     .pokemon_desc {
-      width: 30%;
+      align-self: end;
+      width: 40%;
       .pokemon_name {
         font-size: x-large;
         font-weight: bold;

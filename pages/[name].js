@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout";
@@ -38,18 +39,33 @@ const PokemonName = () => {
     })
       .then((res) => res.json())
       .then((data) => setData(data.data.getPokemon))
+      .catch(() => setData(0))
       .finally(() => setLoading(false));
   }
 
   if (loading) {
     return <div className="loading">loading</div>;
+  } else if (data == 0) {
+    return <div className="loading">no data</div>;
   } else {
     return (
       <Layout>
+        {console.log(data)}
         <div className="pokemon_detail">
           <div className="pokemon_info">
             <div className="pokemon_sprite">
-              <img className="image" alt="" src={data.sprite}></img>
+              <img
+                className="image"
+                alt=""
+                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/${data.num}.png`}
+                // src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${data.num}.gif`}
+              />
+              {/* <Image
+                alt=""
+                height={400}
+                width={400}
+                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/${data.num}.png`}
+              /> */}
             </div>
             <div className="pokemon_desc">
               <p className="pokemon_name">
