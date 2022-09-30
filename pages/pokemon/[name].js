@@ -1,7 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import Layout from "../components/Layout";
+import Layout from "../../components/Layout";
 
 const PokemonName = () => {
   const [data, setData] = useState([]);
@@ -50,7 +51,6 @@ const PokemonName = () => {
   } else {
     return (
       <Layout>
-        {console.log(data)}
         <div className="pokemon_detail">
           <div className="pokemon_info">
             <div className="pokemon_sprite">
@@ -58,14 +58,7 @@ const PokemonName = () => {
                 className="image"
                 alt=""
                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/${data.num}.png`}
-                // src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${data.num}.gif`}
               />
-              {/* <Image
-                alt=""
-                height={400}
-                width={400}
-                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/${data.num}.png`}
-              /> */}
             </div>
             <div className="pokemon_desc">
               <p className="pokemon_name">
@@ -153,6 +146,11 @@ const PokemonName = () => {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="catch">
+            <Link href={`/catch/${data.species}`} replace>
+              <button>catch</button>
+            </Link>
           </div>
         </div>
       </Layout>

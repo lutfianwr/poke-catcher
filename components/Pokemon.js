@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export function Pokemon(pokemon) {
   return (
-    <Link href={pokemon.name.replace(/[^\w ]/g, "")}>
+    <Link href={`pokemon/${pokemon.name.replace(/[^\w ]/g, "")}`}>
       <div className="pokemon">
         <div className="pokemon_sprite">
           <Image

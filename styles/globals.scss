@@ -2,6 +2,7 @@
 body {
   margin: 0;
 }
+//navbar
 nav {
   display: flex;
   height: 50px;
@@ -22,7 +23,7 @@ nav {
     }
   }
 }
-
+//index
 main {
   height: 90vh;
   display: flex;
@@ -34,7 +35,6 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
   .pokemon {
     padding: 0 5px;
     text-align: center;
@@ -65,6 +65,8 @@ main {
     }
   }
 }
+
+//pagination
 .pagination {
   display: flex;
   justify-content: center;
@@ -74,12 +76,21 @@ main {
     margin: 0 5px;
   }
 }
+//detail pokemon
 .pokemon_detail {
+  .catch {
+    text-align: center;
+    button {
+      padding: 5px 15px;
+    }
+  }
   .pokemon_info {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 10vh 15vw;
+    padding: 0 15vw;
+    padding-top: 10vh;
+    padding-bottom: 5vh;
     .pokemon_sprite {
       image-rendering: pixelated;
       align-self: end;
@@ -90,6 +101,20 @@ main {
     .pokemon_desc {
       align-self: end;
       width: 40%;
+      .pokemon_status {
+        p {
+          margin: 0;
+        }
+        .status_container {
+          background-color: rgba(65, 206, 199, 0.205);
+          display: flex;
+          color: white;
+          .status {
+            background-color: rgba(12, 180, 172, 0.685);
+            padding: 2px;
+          }
+        }
+      }
       .pokemon_name {
         font-size: x-large;
         font-weight: bold;
@@ -171,23 +196,61 @@ main {
     }
   }
 }
+//catch pokemon
+.catchpokemon {
+  height: 100vh;
+  padding: 0 20vw;
+  background-image: url("../public/battlefield.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  image-rendering: pixelated;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .catchpokemon_info {
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    .catchpokemon_desc {
+      display: flex;
+      justify-content: space-between;
+      .level {
+        text-align: end;
+      }
+    }
+    .catchpokemon_hp {
+      background-color: rgba(65, 206, 199, 0.205);
+      .status {
+        display: flex;
+        justify-content: space-between;
+        background-color: rgba(12, 180, 172, 0.685);
+        padding: 2px;
+      }
+      p {
+        margin: 2px;
+      }
+    }
+  }
+  .catchpokemon_sprite {
+    text-align: center;
+    img {
+      image-rendering: pixelated;
+      transform: scale(3);
+    }
+  }
+  .catchpokemon_action {
+    background-color: white;
+    padding: 5px 10px;
+    p {
+      margin: 5px;
+    }
+  }
+}
+//loading
 .loading {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.pokemon_status {
-  p {
-    margin: 0;
-  }
-  .status_container {
-    background-color: rgba(65, 206, 199, 0.205);
-    display: flex;
-    color: white;
-    .status {
-      background-color: rgba(12, 180, 172, 0.685);
-      padding: 2px;
-    }
-  }
 }
