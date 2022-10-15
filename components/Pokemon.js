@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export function Pokemon(pokemon) {
   return (
-    <Link href={`pokemon/${pokemon.name.replace(/[^\w ]/g, "")}`}>
+    <Link href={`pokemon/${pokemon.name.split(`-`)[0].replace(/[^\w ]/g, "")}`}>
       <div className="pokemon">
         <div className="pokemon_sprite">
           <Image
@@ -17,15 +17,24 @@ export function Pokemon(pokemon) {
         </div>
         <div className="pokemon_name">
           <p>#{pokemon.id}</p>
-          <p>{pokemon.name}</p>
+          {/* <span>{pokemon.name}</span> */}
+          <span>{pokemon.name.split(`-`)[0]}</span>
         </div>
         <div className="pokemon_type">
           {pokemon.type.length < 2 ? (
-            <p>{pokemon.type[0].pokemon_v2_type.name}</p>
+            <div className="type">
+              <p className={pokemon.type[0].pokemon_v2_type.name}>
+                {pokemon.type[0].pokemon_v2_type.name}
+              </p>
+            </div>
           ) : (
-            <div className="dual_type">
-              <p>{pokemon.type[0].pokemon_v2_type.name}</p>
-              <p>{pokemon.type[1].pokemon_v2_type.name}</p>
+            <div className="type">
+              <p className={pokemon.type[0].pokemon_v2_type.name}>
+                {pokemon.type[0].pokemon_v2_type.name}
+              </p>
+              <p className={pokemon.type[1].pokemon_v2_type.name}>
+                {pokemon.type[1].pokemon_v2_type.name}
+              </p>
             </div>
           )}
         </div>
