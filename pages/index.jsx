@@ -14,19 +14,6 @@ export default function Home() {
     cache: new InMemoryCache(),
   });
 
-  const handleNextPage = () => {
-    if (pageNumber < 60) {
-      setPage(page + 21);
-      setPageNumber(pageNumber + 1);
-    }
-  };
-  const handlePrevPage = () => {
-    if (pageNumber > 1) {
-      setPage(page - 21);
-      setPageNumber(pageNumber - 1);
-    }
-  };
-
   return (
     <ApolloProvider client={myclient}>
       <Head>
@@ -37,11 +24,9 @@ export default function Home() {
       <Layout>
         <main>
           <PokemonsContainer page={page} limit={limit} />
-          <div>
-            <div className="pagination">
-              <p className="pagination_item">generation {pageNumber}</p>
-            </div>
-            <div className="pagination">
+          <div className="pagination">
+            <p className="pagination_number">generation {pageNumber}</p>
+            <div className="pagination_buttons">
               <button
                 onClick={() => (setPageNumber(1), setPage(0), setLimit(151))}
                 className="pagination_item"
@@ -49,37 +34,67 @@ export default function Home() {
                 1
               </button>
               <button
-                onClick={() => (setPageNumber(2), setPage(151), setLimit(100))}
+                onClick={() => (
+                  setPageNumber(2),
+                  setPage(151),
+                  setLimit(100),
+                  window.scrollTo(0, 0)
+                )}
                 className="pagination_item"
               >
                 2
               </button>
               <button
-                onClick={() => (setPageNumber(3), setPage(251), setLimit(134))}
+                onClick={() => (
+                  setPageNumber(3),
+                  setPage(251),
+                  setLimit(134),
+                  window.scrollTo(0, 0)
+                )}
                 className="pagination_item"
               >
                 3
               </button>
               <button
-                onClick={() => (setPageNumber(4), setPage(386), setLimit(107))}
+                onClick={() => (
+                  setPageNumber(4),
+                  setPage(386),
+                  setLimit(107),
+                  window.scrollTo(0, 0)
+                )}
                 className="pagination_item"
               >
                 4
               </button>
               <button
-                onClick={() => (setPageNumber(5), setPage(494), setLimit(155))}
+                onClick={() => (
+                  setPageNumber(5),
+                  setPage(494),
+                  setLimit(155),
+                  window.scrollTo(0, 0)
+                )}
                 className="pagination_item"
               >
                 5
               </button>
               <button
-                onClick={() => (setPageNumber(6), setPage(650), setLimit(159))}
+                onClick={() => (
+                  setPageNumber(6),
+                  setPage(650),
+                  setLimit(159),
+                  window.scrollTo(0, 0)
+                )}
                 className="pagination_item"
               >
                 6
               </button>
               <button
-                onClick={() => (setPageNumber(7), setPage(810), setLimit(88))}
+                onClick={() => (
+                  setPageNumber(7),
+                  setPage(810),
+                  setLimit(88),
+                  window.scrollTo(0, 0)
+                )}
                 className="pagination_item"
               >
                 7

@@ -10,9 +10,10 @@ button {
   cursor: pointer;
 }
 nav {
+  font-family: "Press Start 2P";
   display: flex;
   height: 50px;
-  padding-left: 3vw;
+  padding-left: 6vw;
   background-color: #e04949;
   a {
     display: flex;
@@ -132,12 +133,18 @@ main {
 
 //pagination
 .pagination {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
-  .pagination_item {
-    text-align: end;
-    margin: 0 5px;
+  text-align: center;
+  button {
+    font-family: "Press Start 2P";
+    font-size: xx-small;
+  }
+  .pagination_buttons {
+    display: flex;
+    justify-content: center;
+    .pagination_item {
+      margin: 0 5px;
+      margin-bottom: 5vh;
+    }
   }
 }
 //detail pokemon
