@@ -12,21 +12,18 @@ button {
 nav {
   font-family: "Press Start 2P";
   display: flex;
+  align-items: baseline;
   height: 50px;
   padding-left: 6vw;
+  padding-bottom: 15px;
   background-color: #e04949;
   a {
-    display: flex;
+    margin-right: 30px;
     color: white;
     text-decoration: none;
     p {
       font-size: x-large;
       align-self: center;
-    }
-    img {
-      height: 30px;
-      align-self: center;
-      padding: 5px;
     }
   }
 }
@@ -350,5 +347,106 @@ main {
   }
   75% {
     opacity: 1;
+  }
+}
+
+//my pokemon
+.my_pokemon {
+  margin: 3vh 3vw;
+  text-transform: uppercase;
+  font-family: "Press Start 2P";
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  .pokemon:hover {
+    cursor: pointer;
+  }
+  .pokemon {
+    padding: 0 5px;
+    margin-bottom: 25px;
+    flex: 0 0 13%;
+    .my_pokemon_name {
+      margin-bottom: 10px;
+      p {
+        margin: 0;
+        font-size: smaller;
+      }
+      span {
+        color: gray;
+        font-size: 9px;
+      }
+    }
+    .pokemon_name {
+      p {
+        font-size: 11px;
+        color: gray;
+      }
+    }
+    .pokemon_type {
+      font-size: 9px;
+      .type {
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        p {
+          margin: 5px 10px 5px 10px;
+        }
+        .Fairy {
+          color: #ee99ee;
+        }
+        .Ice {
+          color: #66ccff;
+        }
+        .Dragon {
+          color: #7766ee;
+        }
+        .Normal {
+          color: #aaaa99;
+        }
+        .Rock {
+          color: #bbaa66;
+        }
+        .Fire {
+          color: #ff4422;
+        }
+        .Flying {
+          color: #8899ff;
+        }
+        .Bug {
+          color: #aabb22;
+        }
+        .Electric {
+          color: #ffcc33;
+        }
+        .Fighting {
+          color: #bb5544;
+        }
+        .Psychic {
+          color: #ff5599;
+        }
+        .Water {
+          color: #3399ff;
+        }
+        .Steel {
+          color: #aaaabb;
+        }
+        .Ghost {
+          color: #6666bb;
+        }
+        .Dark {
+          color: #775544;
+        }
+        .Poison {
+          color: #aa5599;
+        }
+        .Grass {
+          color: #77cc55;
+        }
+        .Ground {
+          color: #ddbb55;
+        }
+      }
+    }
   }
 }

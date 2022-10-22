@@ -19,12 +19,35 @@ const CatchName = () => {
 
   const handleThrowPokeball = () => {
     let chance = Math.floor(Math.random() * (0 + 100) + 10);
+    const temp = localStorage.getItem("myPokemon");
+    const tempData = JSON.parse(temp);
+
     if (chance < catchRate) {
+      if (temp) {
+        tempData.push(data);
+        localStorage.setItem("myPokemon", JSON.stringify(tempData));
+      } else {
+        localStorage.setItem("myPokemon", JSON.stringify([data]));
+      }
       alert(`${data.species} caught!`);
       Router.replace("/");
     } else {
       alert(`${data.species} broke the pokeball!`);
     }
+  };
+
+  const handleThrowMasterball = () => {
+    const temp = localStorage.getItem("myPokemon");
+    if (temp) {
+      const tempData = JSON.parse(temp);
+      tempData.push(data);
+      localStorage.setItem("myPokemon", JSON.stringify(tempData));
+    } else {
+      localStorage.setItem("myPokemon", JSON.stringify([data]));
+    }
+
+    alert(`${data.species} caught!`);
+    Router.replace("/");
   };
 
   const handleThrowStone = () => {
@@ -144,6 +167,9 @@ const CatchName = () => {
         </div>
         <div className="catchpokemon_action">
           <div>
+            {/* <a onClick={() => handleThrowMasterball()} className="mx-2">
+              <p>Throw Masterball</p>
+            </a> */}
             <a onClick={() => handleThrowPokeball()} className="mx-2">
               <p>Throw Pokeball</p>
             </a>
