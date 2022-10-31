@@ -1,12 +1,13 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
+import styles from "../styles/index.module.scss";
 
 export function Pokemon(pokemon) {
   return (
     <Link href={`pokemon/${pokemon.name.split(`-`)[0].replace(/[^\w ]/g, "")}`}>
-      <div className="pokemon">
-        <div className="pokemon_sprite">
+      <div className={styles.pokemon}>
+        <div className={styles.pokemon_sprite}>
           <Image
             alt=""
             layout="fixed"
@@ -15,24 +16,23 @@ export function Pokemon(pokemon) {
             src={pokemon.sprite}
           />
         </div>
-        <div className="pokemon_name">
+        <div className={styles.pokemon_name}>
           <p>#{pokemon.id}</p>
-          {/* <span>{pokemon.name}</span> */}
           <span>{pokemon.name.split(`-`)[0]}</span>
         </div>
-        <div className="pokemon_type">
+        <div className={styles.pokemon_type}>
           {pokemon.type.length < 2 ? (
-            <div className="type">
-              <p className={pokemon.type[0].pokemon_v2_type.name}>
+            <div className={styles.type}>
+              <p className={styles[pokemon.type[0].pokemon_v2_type.name]}>
                 {pokemon.type[0].pokemon_v2_type.name}
               </p>
             </div>
           ) : (
-            <div className="type">
-              <p className={pokemon.type[0].pokemon_v2_type.name}>
+            <div className={styles.type}>
+              <p className={styles[pokemon.type[0].pokemon_v2_type.name]}>
                 {pokemon.type[0].pokemon_v2_type.name}
               </p>
-              <p className={pokemon.type[1].pokemon_v2_type.name}>
+              <p className={styles[pokemon.type[1].pokemon_v2_type.name]}>
                 {pokemon.type[1].pokemon_v2_type.name}
               </p>
             </div>

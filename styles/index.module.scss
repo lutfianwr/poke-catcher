@@ -1,0 +1,99 @@
+.main {
+  text-transform: uppercase;
+  font-family: "Press Start 2P";
+  height: 90vh;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column;
+  margin: 3vh 3vw;
+  .flex_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .pokemon {
+      padding: 0 5px;
+      margin-bottom: 25px;
+      text-align: center;
+      flex: 0 0 13%;
+      font-size: 11px;
+      cursor: pointer;
+      .pokemon_sprite {
+        img {
+          width: 100px;
+          height: auto;
+        }
+      }
+      .pokemon_name {
+        p {
+          font-size: 11px;
+          color: gray;
+        }
+      }
+      .pokemon_type {
+        font-size: 9px;
+        .type {
+          margin-bottom: 10px;
+          display: flex;
+          justify-content: center;
+          p {
+            margin: 5px 10px 5px 10px;
+          }
+          .fairy {
+            color: #ee99ee;
+          }
+          .ice {
+            color: #66ccff;
+          }
+          .dragon {
+            color: #7766ee;
+          }
+          .normal {
+            color: #aaaa99;
+          }
+          .rock {
+            color: #bbaa66;
+          }
+          .fire {
+            color: #ff4422;
+          }
+          .flying {
+            color: #8899ff;
+          }
+          .bug {
+            color: #aabb22;
+          }
+          .electric {
+            color: #ffcc33;
+          }
+          .fighting {
+            color: #bb5544;
+          }
+          .psychic {
+            color: #ff5599;
+          }
+          .water {
+            color: #3399ff;
+          }
+          .steel {
+            color: #aaaabb;
+          }
+          .ghost {
+            color: #6666bb;
+          }
+          .dark {
+            color: #775544;
+          }
+          .poison {
+            color: #aa5599;
+          }
+          .grass {
+            color: #77cc55;
+          }
+          .ground {
+            color: #ddbb55;
+          }
+        }
+      }
+    }
+  }
+}

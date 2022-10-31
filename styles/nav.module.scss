@@ -1,0 +1,23 @@
+//navbar
+.link,
+.button {
+  cursor: pointer;
+}
+.nav {
+  font-family: "Press Start 2P";
+  display: flex;
+  align-items: baseline;
+  height: 50px;
+  padding-left: 6vw;
+  padding-bottom: 15px;
+  background-color: #e04949;
+  a {
+    margin-right: 30px;
+    color: white;
+    text-decoration: none;
+    p {
+      font-size: x-large;
+      align-self: center;
+    }
+  }
+}

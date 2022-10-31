@@ -1,0 +1,61 @@
+//catch pokemon
+.catchpokemon {
+  font-family: "Press Start 2P";
+  height: 100vh;
+  padding: 0 20vw;
+  background-image: url("../public/battlefield.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  image-rendering: pixelated;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .catchpokemon_info {
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    text-transform: uppercase;
+    .catchpokemon_desc {
+      display: flex;
+      justify-content: space-between;
+      .level {
+        text-align: end;
+      }
+    }
+    .catchpokemon_hp {
+      background-color: rgba(65, 206, 199, 0.205);
+      .status {
+        display: flex;
+        justify-content: space-between;
+        background-color: rgba(12, 180, 172, 0.685);
+      }
+      p {
+        padding: 2px;
+        margin: 2px;
+      }
+    }
+  }
+
+  .catchpokemon_sprite {
+    text-align: center;
+    .damaged {
+      animation-name: damaged;
+      animation-duration: 0.5s;
+    }
+    img {
+      image-rendering: pixelated;
+      transform: scale(3);
+    }
+  }
+  .catchpokemon_action {
+    background-color: white;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-around;
+
+    p {
+      margin: 15px;
+    }
+  }
+}

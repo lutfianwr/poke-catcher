@@ -3,6 +3,7 @@ import { PokemonsContainer } from "../containers/PokemonContainer";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import Head from "next/head";
 import Layout from "../components/Layout";
+import styles from "../styles/index.module.scss";
 
 export default function Home() {
   const [page, setPage] = useState(0);
@@ -22,7 +23,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <Layout>
-        <main>
+        <main id="main" className={styles.main}>
           <PokemonsContainer page={page} limit={limit} />
           <div className="pagination">
             <p className="pagination_number">generation {pageNumber}</p>

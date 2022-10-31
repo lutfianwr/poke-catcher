@@ -1,5 +1,6 @@
 import Router, { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import styles from "../../styles/catchPokemon.module.scss";
 
 const CatchName = () => {
   const [data, setData] = useState([]);
@@ -34,20 +35,6 @@ const CatchName = () => {
     } else {
       alert(`${data.species} broke the pokeball!`);
     }
-  };
-
-  const handleThrowMasterball = () => {
-    const temp = localStorage.getItem("myPokemon");
-    if (temp) {
-      const tempData = JSON.parse(temp);
-      tempData.push(data);
-      localStorage.setItem("myPokemon", JSON.stringify(tempData));
-    } else {
-      localStorage.setItem("myPokemon", JSON.stringify([data]));
-    }
-
-    alert(`${data.species} caught!`);
-    Router.replace("/");
   };
 
   const handleThrowStone = () => {
@@ -126,7 +113,7 @@ const CatchName = () => {
   } else {
     return (
       <div
-        className="catchpokemon"
+        className={styles.catchpokemon}
         onLoad={() => {
           setHitpoint(data.baseStats.hp + level * 2),
             setmaxHitpoint(data.baseStats.hp + level * 2),
@@ -135,15 +122,15 @@ const CatchName = () => {
             );
         }}
       >
-        <div className="catchpokemon_info">
-          <div className="catchpokemon_desc">
-            <p className="catchpokemon_name">{data.species}</p>
-            <p className="level">Lv{level}</p>
+        <div className={styles.catchpokemon_info}>
+          <div className={styles.catchpokemon_desc}>
+            <p className={styles.catchpokemon_name}>{data.species}</p>
+            <p className={styles.level}>Lv{level}</p>
             {/* <p className="level">{catchRate}</p> */}
           </div>
-          <div className="catchpokemon_hp">
+          <div className={styles.catchpokemon_hp}>
             <div
-              className="status"
+              className={styles.status}
               style={{
                 ["width"]: `${(hitpoint / maxhitpoint) * 100}%`,
               }}
@@ -165,7 +152,7 @@ const CatchName = () => {
             }
           />
         </div>
-        <div className="catchpokemon_action">
+        <div className={styles.catchpokemon_action}>
           <div>
             {/* <a onClick={() => handleThrowMasterball()} className="mx-2">
               <p>Throw Masterball</p>

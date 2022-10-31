@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import Layout from "../../components/Layout";
+import styles from "../../styles/pokemon.module.scss";
 
 const PokemonName = () => {
   const [data, setData] = useState([]);
@@ -51,70 +52,70 @@ const PokemonName = () => {
   } else {
     return (
       <Layout>
-        <div className="pokemon_detail">
-          <div className="pokemon_info">
-            <div className="pokemon_sprite">
+        <div className={styles.pokemon_detail}>
+          <div className={styles.pokemon_info}>
+            <div className={styles.pokemon_sprite}>
               <img
-                className="image"
+                className={styles.image}
                 alt=""
                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/${data.num}.png`}
               />
             </div>
-            <div className="pokemon_desc">
-              <p className="pokemon_name">
+            <div className={styles.pokemon_desc}>
+              <p className={styles.pokemon_name}>
                 #{data.num} {data.species}
               </p>
 
-              <div className="type">
+              <div className={styles.type}>
                 {data.types.map((type) => (
-                  <p className={type} key={type}>
+                  <p className={styles[type]} key={type}>
                     {type}
                   </p>
                 ))}
               </div>
-              <div className="desc">
+              <div className={styles.desc}>
                 {data.flavorTexts[0] ? (
                   <p>{data.flavorTexts[0].flavor}</p>
                 ) : (
                   <p>Unknown data</p>
                 )}
               </div>
-              <div className="size">
+              <div className={styles.size}>
                 <p>Height : {data.height} m</p>
                 <p>Weight : {data.weight} kg</p>
               </div>
-              <div className="pokemon_status">
+              <div className={styles.pokemon_status}>
                 <p>HP</p>
-                <div className="status_container">
+                <div className={styles.status_container}>
                   <div
-                    className="status"
+                    className={styles.status}
                     style={{ ["width"]: `${data.baseStats.hp * 0.25}%` }}
                   >
                     {data.baseStats.hp}
                   </div>
                 </div>
                 <p>Atk</p>
-                <div className="status_container">
+                <div className={styles.status_container}>
                   <div
-                    className="status"
+                    className={styles.status}
                     style={{ ["width"]: `${data.baseStats.attack * 0.4}%` }}
                   >
                     {data.baseStats.attack}
                   </div>
                 </div>
                 <p>Def</p>
-                <div className="status_container">
+                <div className={styles.status_container}>
                   <div
-                    className="status"
+                    className={styles.status}
                     style={{ ["width"]: `${data.baseStats.defense * 0.4}%` }}
                   >
                     {data.baseStats.defense}
                   </div>
                 </div>
                 <p>Sp Atk</p>
-                <div className="status_container">
+                <div className={styles.status_container}>
                   <div
-                    className="status"
+                    className={styles.status}
                     style={{
                       ["width"]: `${data.baseStats.specialattack * 0.4}%`,
                     }}
@@ -124,9 +125,9 @@ const PokemonName = () => {
                 </div>
 
                 <p>Sp Def</p>
-                <div className="status_container">
+                <div className={styles.status_container}>
                   <div
-                    className="status"
+                    className={styles.status}
                     style={{
                       ["width"]: `${data.baseStats.specialdefense * 0.4}%`,
                     }}
@@ -136,9 +137,9 @@ const PokemonName = () => {
                 </div>
 
                 <p>Spd</p>
-                <div className="status_container">
+                <div className={styles.status_container}>
                   <div
-                    className="status"
+                    className={styles.status}
                     style={{ ["width"]: `${data.baseStats.speed * 0.4}%` }}
                   >
                     {data.baseStats.speed}
@@ -147,7 +148,7 @@ const PokemonName = () => {
               </div>
             </div>
           </div>
-          <div className="catch">
+          <div className={styles.catch}>
             <Link href={`/catch/${data.species}`} replace>
               <button>catch</button>
             </Link>
