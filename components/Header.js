@@ -8,7 +8,9 @@ const Header = () => {
       <a className={styles.link} href="https://poke-room.netlify.app">
         <p>PokéRoom</p>
       </a>
-      <Link href={`myPokemon`}>MyPokémon</Link>
+      <Link href="/myPokemon" replace={true}>
+        MyPokémon
+      </Link>
     </nav>
   );
 };

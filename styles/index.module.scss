@@ -10,9 +10,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
     .pokemon {
       padding: 0 5px;
-      margin-bottom: 25px;
+      padding-bottom: 25px;
       text-align: center;
       flex: 0 0 13%;
       font-size: 11px;
@@ -22,6 +23,11 @@
           width: 100px;
           height: auto;
         }
+      }
+      .pokemon_sprite:hover {
+        margin-top: -5px;
+        padding-bottom: 5px;
+        transition: 0.5s;
       }
       .pokemon_name {
         p {
