@@ -1,5 +1,5 @@
 import Router, { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styles from "../../styles/catchPokemon.module.scss";
 
 const CatchName = () => {
@@ -13,6 +13,7 @@ const CatchName = () => {
   const [catchRate, setcatchRate] = useState(0);
   const [weak, setWeak] = useState(false);
   const [evasive, setEvasive] = useState(60);
+  const [nickName, setNickName] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -20,21 +21,36 @@ const CatchName = () => {
 
   const handleThrowPokeball = () => {
     let chance = Math.floor(Math.random() * (0 + 100) + 10);
-    const temp = localStorage.getItem("myPokemon");
-    const tempData = JSON.parse(temp);
 
     if (chance < catchRate) {
-      if (temp) {
-        tempData.push(data);
-        localStorage.setItem("myPokemon", JSON.stringify(tempData));
-      } else {
-        localStorage.setItem("myPokemon", JSON.stringify([data]));
-      }
+      nameMyPokemon();
+
       alert(`${data.species} caught!`);
-      Router.replace("/");
     } else {
       alert(`${data.species} broke the pokeball!`);
     }
+  };
+
+  const nameMyPokemon = () => {
+    document.getElementById("input_name").style.display = "flex";
+  };
+
+  const saveMyPokemon = (e) => {
+    e.preventDefault();
+    const temp = localStorage.getItem("myPokemon");
+    const tempData = JSON.parse(temp);
+
+    data.nickname = nickName;
+    data.level = level;
+
+    if (temp) {
+      tempData.push(data);
+      localStorage.setItem("myPokemon", JSON.stringify(tempData));
+    } else {
+      localStorage.setItem("myPokemon", JSON.stringify([data]));
+    }
+
+    Router.replace("/");
   };
 
   const handleThrowStone = () => {
@@ -152,11 +168,20 @@ const CatchName = () => {
             }
           />
         </div>
+        <form
+          id="input_name"
+          className={styles.inputname}
+          onSubmit={(event) => {
+            saveMyPokemon(event);
+          }}
+        >
+          <label>give {data.species} a nickname</label>
+          <input onChange={(e) => setNickName(e.target.value)} />
+          <button>submit</button>
+        </form>
+
         <div className={styles.catchpokemon_action}>
           <div>
-            {/* <a onClick={() => handleThrowMasterball()} className="mx-2">
-              <p>Throw Masterball</p>
-            </a> */}
             <a onClick={() => handleThrowPokeball()} className="mx-2">
               <p>Throw Pokeball</p>
             </a>

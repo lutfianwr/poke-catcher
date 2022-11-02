@@ -1,5 +1,6 @@
 //catch pokemon
 .catchpokemon {
+  position: relative;
   font-family: "Press Start 2P";
   height: 100vh;
   padding: 0 20vw;
@@ -62,5 +63,27 @@
     a:hover {
       color: gray;
     }
+  }
+}
+
+.inputname {
+  display: none;
+  flex-direction: column;
+  background-color: white;
+  padding: 10px 0px;
+  text-align: center;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  width: 60vw;
+  padding: 50px 0;
+  bottom: 0;
+  input {
+    font-family: "Press Start 2P";
+    margin: 10px 0;
+    text-align: center;
+  }
+  button {
+    font-family: "Press Start 2P";
   }
 }

@@ -11,6 +11,10 @@
     flex-wrap: wrap;
     justify-content: center;
 
+    button {
+      font-family: "Press Start 2P";
+      right: 0;
+    }
     .pokemon {
       padding: 0 5px;
       padding-bottom: 25px;
@@ -28,6 +32,11 @@
         margin-top: -5px;
         padding-bottom: 5px;
         transition: 0.5s;
+      }
+      .my_pokemon_name {
+        span {
+          color: gray;
+        }
       }
       .pokemon_name {
         p {

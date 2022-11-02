@@ -36,48 +36,57 @@ const MyPokemon = () => {
         <div className={styles.main}>
           <div className={styles.flex_container}>
             {datas.map((data) => (
-              <Link
-                href={`pokemon/${data.species.toLowerCase()}`}
-                key={data.id}
-              >
-                <div className={styles.pokemon}>
-                  <div className={styles.my_pokemon_name}>
-                    {/* <p>{data.nickname}</p>
-                  <span>Lv. {data.level}</span> */}
+              <div key={data.id}>
+                <button
+                  className={styles.release_button}
+                  onClick={() => {
+                    confirm(`are you sure want to release ${data.nickname}?`)
+                      ? alert(`goodbye ${data.nickname}`)
+                      : alert(`u not released ${data.nickname}`);
+                  }}
+                >
+                  x
+                </button>
+                <Link href={`pokemon/${data.species.toLowerCase()}`}>
+                  <div className={styles.pokemon}>
+                    <div className={styles.my_pokemon_name}>
+                      <p>{data.nickname}</p>
+                      <span>Lv. {data.level}</span>
+                    </div>
+                    <div className={styles.pokemon_sprite}>
+                      <Image
+                        alt=""
+                        layout="fixed"
+                        width={150}
+                        height={150}
+                        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.num}.png`}
+                      />
+                    </div>
+                    <div className={styles.pokemon_name}>
+                      <p>#{data.num}</p>
+                      <span>{data.species}</span>
+                    </div>
+                    <div className={styles.pokemon_type}>
+                      {data.types.length < 2 ? (
+                        <div className={styles.type}>
+                          <p className={styles[data.types[0].toLowerCase()]}>
+                            {data.types[0]}
+                          </p>
+                        </div>
+                      ) : (
+                        <div className={styles.type}>
+                          <p className={styles[data.types[0].toLowerCase()]}>
+                            {data.types[0]}
+                          </p>
+                          <p className={styles[data.types[1].toLowerCase()]}>
+                            {data.types[1]}
+                          </p>
+                        </div>
+                      )}
+                    </div>
                   </div>
-                  <div className={styles.pokemon_sprite}>
-                    <Image
-                      alt=""
-                      layout="fixed"
-                      width={150}
-                      height={150}
-                      src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.num}.png`}
-                    />
-                  </div>
-                  <div className={styles.pokemon_name}>
-                    <p>#{data.num}</p>
-                    <span>{data.species}</span>
-                  </div>
-                  <div className={styles.pokemon_type}>
-                    {data.types.length < 2 ? (
-                      <div className={styles.type}>
-                        <p className={styles[data.types[0].toLowerCase()]}>
-                          {data.types[0]}
-                        </p>
-                      </div>
-                    ) : (
-                      <div className={styles.type}>
-                        <p className={styles[data.types[0].toLowerCase()]}>
-                          {data.types[0]}
-                        </p>
-                        <p className={styles[data.types[1].toLowerCase()]}>
-                          {data.types[1]}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </Link>
+                </Link>
+              </div>
             ))}
           </div>
         </div>
