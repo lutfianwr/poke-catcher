@@ -118,3 +118,24 @@
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .pokemon_detail {
+    .pokemon_info {
+      flex-direction: column;
+      padding-top: 0;
+      .pokemon_sprite {
+        align-self: center;
+        .image {
+          height: 300px;
+        }
+      }
+      .pokemon_desc {
+        width: 100%;
+      }
+    }
+  }
+  .catch {
+    margin-bottom: 5vh;
+  }
+}

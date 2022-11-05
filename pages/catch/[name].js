@@ -142,7 +142,6 @@ const CatchName = () => {
           <div className={styles.catchpokemon_desc}>
             <p className={styles.catchpokemon_name}>{data.species}</p>
             <p className={styles.level}>Lv{level}</p>
-            {/* <p className="level">{catchRate}</p> */}
           </div>
           <div className={styles.catchpokemon_hp}>
             <div
@@ -194,7 +193,7 @@ const CatchName = () => {
               <p>Throw Stone</p>
             </a>
             <a onClick={() => handleRun()}>
-              <p>Run</p>
+              <p>Run Away</p>
             </a>
           </div>
         </div>
