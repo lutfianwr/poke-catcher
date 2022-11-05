@@ -22,9 +22,20 @@ const MyPokemon = () => {
     }, 500);
   };
 
+  const handleRelease = (pokemon) => {
+    const temp = localStorage.getItem("myPokemon");
+    const tempData = JSON.parse(temp);
+    const tempFilter = tempData.filter(
+      (data) => data.nickname !== pokemon.nickname
+    );
+    localStorage.setItem("myPokemon", JSON.stringify(tempFilter));
+    alert(`goodbye ${pokemon.nickname}`);
+    fetchData();
+  };
+
   if (loading) {
     return <div className="loading">loading</div>;
-  } else if (datas == null) {
+  } else if (datas == null || datas.length === 0) {
     return (
       <Layout>
         <div className="loading">you have not catch any pokemon</div>;
@@ -39,10 +50,9 @@ const MyPokemon = () => {
               <div key={data.id}>
                 <button
                   className={styles.release_button}
-                  onClick={() => {
-                    confirm(`are you sure want to release ${data.nickname}?`)
-                      ? alert(`goodbye ${data.nickname}`)
-                      : alert(`u not released ${data.nickname}`);
+                  onClick={(pokemon) => {
+                    confirm(`are you sure want to release ${data.nickname}?`) &&
+                      handleRelease(data);
                   }}
                 >
                   x
