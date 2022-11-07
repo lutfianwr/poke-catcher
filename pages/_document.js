@@ -18,7 +18,7 @@ class MyDocument extends Document {
           />
           <meta
             itemprop="image"
-            content="https://github.com/lutfianwr/poke-catcher/blob/main/public/screenshot.png"
+            content="https://github.com/lutfianwr/poke-catcher/blob/main/public/screenshot.png?raw=true"
           />
 
           {/* <!-- Facebook Meta Tags --/> */}
@@ -40,7 +40,7 @@ class MyDocument extends Document {
           />
           <meta
             name="twitter:image"
-            content="https://github.com/lutfianwr/poke-catcher/blob/main/public/screenshot.png"
+            content="https://github.com/lutfianwr/poke-catcher/blob/main/public/screenshot.png?raw=true"
           />
         </Head>
         <body>
